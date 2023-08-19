@@ -1,0 +1,32 @@
+<#assign tests = [
+    [5, 2, 3],
+    [5, 3, 4],
+    [10, 5, 8],
+    [15, 8, 12],
+    [20, 12, 16],
+    [25, 16, 20],
+    [30, 20, 25],
+    [50, 20, 40],
+    [100, 40, 70],
+    [200, 80, 10],
+    [200, 5, 160],
+    [500, 5, 360],
+    [1000, 5, 800],
+    [2000, 5, 1700],
+    [5000, 2, 3000],
+    [5000, 5000, 5000]
+]>
+<#list tests as test>
+    <#assign n = test[0]>
+    <#assign rectangles = test[1]>
+    <#assign maxsidelength = test[2]>
+    generator --n ${n} --rectangles ${rectangles} --max_side_length ${maxsidelength} > $
+</#list>
+
+\begin{tabular}{ccccc}
+0 & 1 & 0 & 1 & 0 \\ 
+0 & \underline{\textbf{0}} & \underline{\textbf{1}} & \underline{\textbf{0}} & \underline{\textbf{1}} \\ 
+0 & \underline{\textbf{1}} & \underline{\textbf{0}} & \underline{\textbf{1}} & \underline{\textbf{0}} \\ 
+1 & \underline{\textbf{0}} & \underline{\textbf{1}} & \underline{\textbf{0}} & \underline{\textbf{1}} \\ 
+0 & \underline{\textbf{1}} & \underline{\textbf{0}} & \underline{\textbf{1}} & \underline{\textbf{0}} \\ 
+\end{tabular}
