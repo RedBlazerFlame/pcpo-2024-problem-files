@@ -8,7 +8,7 @@ int main(int argc, char** argv) {
     registerValidation(argc, argv);
     
     ll N = inf.readLong(1, max_n, "N");
-    inf.readEoln();
+    inf.readEof();
 
     return 0;
 }
