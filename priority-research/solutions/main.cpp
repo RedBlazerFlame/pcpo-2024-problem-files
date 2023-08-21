@@ -1,3 +1,7 @@
+/*
+Note: Everything above n >= 1075364 will result in 0
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
@@ -25,6 +29,7 @@ ll solve(ll n) {
 
 ll seq(ll n) {
     if(n == 0ll) return 1ll;
+    if(n >= 1075364ll) return 0ll;
     ll cur_prod = 1ll;
     ll cur_term = 1ll;
     ll next_term = 1ll;
@@ -32,15 +37,15 @@ ll seq(ll n) {
     for(ll i = 0; i < n; i++) {
         cur_prod = (cur_prod * cur_term) % MOD;
         next_term = (cur_term + cur_prod) % MOD;
-        if(i > n - 20ll) cout << i + 1 << ": " << mod(next_term - cur_term) << endl;
+        if(i == n - 1ll) return mod(next_term - cur_term);
         cur_term = next_term;
     }
-
-    return next_term;
 }
 
 int main() {
-    seq(1075368ll);
+    ll n;
+    cin >> n;
+    cout << seq(n) << endl;
 
     return 0;
 }
