@@ -4,9 +4,9 @@ typedef long long ll;
 
 int main(int argc, char** argv) {
     registerGen(argc, argv, 1);
-    ll n = opt<ll>("n");
+    ll A = opt<ll>("A");
 
-    cout << n << "\n";
+    cout << A << "\n";
 
     return 0;
 }
