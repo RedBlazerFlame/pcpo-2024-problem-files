@@ -6,5 +6,5 @@ for i in range(1, 40):
         f.write(res)
     
     system(f'./cpp1_ac <"test.in" >"o1.out"')
-    system(f'pypy py1_ac.py <"test.in" >"o2.out"')
+    system(f'pypy py2_ac.py <"test.in" >"o2.out"')
     system('diff o1.out o2.out')
