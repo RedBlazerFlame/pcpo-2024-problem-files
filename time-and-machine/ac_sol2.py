@@ -1,0 +1,1 @@
+print(sum(map(lambda x: x[0] * x[1], zip([3600, 60, 1], map(int, input().split(" "))))))
